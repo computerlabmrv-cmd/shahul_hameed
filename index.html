@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ഷാഹുൽ ഹമീദ് | ക്ലാസ് 9 | സോഫ്റ്റ്വെയർ എഞ്ചിനീയർ</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #bbb 1px solid;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header .tagline {
+            font-size: 1.4em;
+            background: rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 1.1em;
+            transition: background 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #575757;
+        }
+
+        /* Main Sections */
+        section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #444;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* About Section */
+        #about {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .profile-emoji {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            font-size: 8em;
+        }
+
+        /* Education */
+        .edu-card {
+            background: #f9f9f9;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .edu-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .edu-card .institution {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .edu-card .year {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Experience */
+        .exp-item {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .exp-item h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .exp-item .company {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .exp-item .duration {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .exp-item ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+
+        .exp-item li {
+            margin-bottom: 5px;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 20px;
+            min-width: 200px;
+        }
+
+        .contact-item .emoji {
+            font-size: 3em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .quote {
+            font-style: italic;
+            color: #ccc;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            #about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-emoji {
+                font-size: 6em;
+                margin-bottom: 20px;
+            }
+
+            .skills-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ഷാഹുൽ ഹമീദ്</h1>
+            <p class="tagline">🚀 സോഫ്റ്റ്വെയർ എഞ്ചിനീയർ | ക്ലാസ് 9 വിദ്യാർത്ഥി | ഭാവിയിലെ ടെക് നേതാവ്</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#about">എന്നെക്കുറിച്ച്</a>
+            <a href="#education">വിദ്യാഭ്യാസം</a>
+            <a href="#skills">കഴിവുകൾ</a>
+            <a href="#experience">പരിചയം</a>
+            <a href="#contact">ബന്ധപ്പെടുക</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-text">
+                <h2>🔰 എന്നെക്കുറിച്ച്</h2>
+                <p>ഞാൻ <strong>ഷാഹുൽ ഹമീദ്</strong>. ക്ലാസ് 9 ൽ പഠിക്കുന്ന ഒരു വിദ്യാർത്ഥിയും അഭിനിവേശമുള്ള ഒരു <strong>സോഫ്റ്റ്വെയർ എഞ്ചിനീയർ</strong> ആണ്. ചെറുപ്പം മുതലേ കമ്പ്യൂട്ടറുകളോടും ടെക്നോളജിയോടും ഉള്ള താത്പര്യം എന്നെ ഈ മേഖലയിലേക്ക് നയിച്ചു.</p>
+                <p>പുതിയ ടെക്നോളജികൾ പഠിക്കാനും, ക്രിയേറ്റീവ് ആയ പ്രോജക്ടുകൾ ചെയ്യാനും, ലോകത്തിന് ഉപകാരപ്പെടുന്ന സോഫ്റ്റ്വെയറുകൾ നിർമ്മിക്കാനും ഞാൻ ആഗ്രഹിക്കുന്നു. എന്റെ ലക്ഷ്യം വലിയൊരു ടെക് കമ്പനിയിൽ സോഫ്റ്റ്വെയർ എഞ്ചിനീയർ ആയി ജോലി ചെയ്യുക എന്നതാണ്.</p>
+            </div>
+            <div class="profile-emoji">
+                👨‍💻
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>📚 വിദ്യാഭ്യാസം</h2>
+            <div class="edu-card">
+                <h3>🔹 ഹൈസ്കൂൾ വിദ്യാഭ്യാസം</h3>
+                <p class="institution">ഗവ. ഹയർ സെക്കണ്ടറി സ്കൂൾ</p>
+                <p class="year">2024 - നിലവിൽ (ക്ലാസ് 9)</p>
+                <p>നിലവിൽ ക്ലാസ് 9 ൽ പഠിക്കുന്നു. പ്രധാന വിഷയങ്ങൾ: കണക്ക്, ശാസ്ത്രം, സാമൂഹ്യശാസ്ത്രം, കമ്പ്യൂട്ടർ സയൻസ്.</p>
+            </div>
+            <div class="edu-card">
+                <h3>🔹 സ്വയം പഠനം & ഓൺലൈൻ കോഴ്സുകൾ</h3>
+                <p class="institution">Coursera | Udemy | YouTube</p>
+                <p class="year">2023 - നിലവിൽ</p>
+                <p>പൈത്തൺ, HTML, CSS, JavaScript എന്നിവയിൽ ഓൺലൈൻ കോഴ്സുകൾ പൂർത്തിയാക്കി. ചെറിയ ചെറിയ വെബ്സൈറ്റുകളും പ്രോഗ്രാമുകളും എഴുതി പരിശീലിക്കുന്നു.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>⚡ എന്റെ കഴിവുകൾ</h2>
+            <div class="skills-container">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript (Basic)</span>
+                <span class="skill">Python (Basic)</span>
+                <span class="skill">C Programming</span>
+                <span class="skill">Problem Solving</span>
+                <span class="skill">Team Work</span>
+                <span class="skill">Public Speaking</span>
+                <span class="skill">Typing (40 WPM)</span>
+                <span class="skill">MS Office</span>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>💼 പരിചയം</h2>
+            
+            <div class="exp-item">
+                <h3>ഫ്രീലാൻസ് വെബ് ഡെവലപ്പർ</h3>
+                <p class="company">സ്വയം തൊഴിൽ | ഓൺലൈൻ</p>
+                <p class="duration">2024 - നിലവിൽ</p>
+                <ul>
+                    <li>ചെറുകിട ബിസിനസുകൾക്കും വ്യക്തികൾക്കും വെബ്സൈറ്റുകൾ നിർമ്മിച്ചു കൊടുക്കുന്നു.</li>
+                    <li>HTML, CSS ഉപയോഗിച്ച് റെസ്പോൺസീവ് വെബ്സൈറ്റുകൾ ഡിസൈൻ ചെയ്യുന്നു.</li>
+                    <li>3 പ്രോജക്ടുകൾ വിജയകരമായി പൂർത്തിയാക്കി.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>ജൂനിയർ പ്രോഗ്രാമർ (ഇന്റേൺഷിപ്പ്)</h3>
+                <p class="company">ടെക് സ്റ്റാർട്ടപ്പ് (വെർച്വൽ)</p>
+                <p class="duration">2023 - 2024 (6 മാസം)</p>
+                <ul>
+                    <li>ഒരു ടീമിനൊപ്പം ചേർന്ന് ചെറിയ ചെറിയ മൊഡ്യൂളുകൾ ഡെവലപ്പ് ചെയ്തു.</li>
+                    <li>ബഗ് ഫിക്സിംഗിലും കോഡ് റിവ്യൂവിലും സഹായിച്ചു.</li>
+                    <li>അഗൈൽ മെത്തഡോളജിയും ഗിറ്റും ഉപയോഗിക്കാൻ പഠിച്ചു.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>സ്കൂൾ സയൻസ് ക്ലബ് - ടെക്നിക്കൽ ഹെഡ്</h3>
+                <p class="company">ഗവ. ഹയർ സെക്കണ്ടറി സ്കൂൾ</p>
+                <p class="duration">2024 - നിലവിൽ</p>
+                <ul>
+                    <li>സയൻസ് ക്ലബ്ബിന്റെ നേതൃത്വത്തിൽ സാങ്കേതിക പ്രവർത്തനങ്ങൾ ഏകോപിപ്പിക്കുന്നു.</li>
+                    <li>സ്കൂൾ കാലിഡോസ്കോപ്പിനായി ഒരു ചെറിയ വെബ്സൈറ്റ് നിർമ്മിച്ചു.</li>
+                    <li>മറ്റ് വിദ്യാർത്ഥികൾക്ക് കമ്പ്യൂട്ടറിന്റെ അടിസ്ഥാനകാര്യങ്ങൾ പഠിപ്പിക്കുന്നു.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>📞 ബന്ധപ്പെടുക</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="emoji">📧</span>
+                    <a href="mailto:shahul.hameed@example.com">shahul.hameed@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="emoji">📱</span>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                </div>
+                <div class="contact-item">
+                    <span class="emoji">📍</span>
+                    <p>കോഴിക്കോട്, കേരളം</p>
+                </div>
+                <div class="contact-item">
+                    <span class="emoji">💻</span>
+                    <a href="#">github.com/shahul-hameed</a>
+                </div>
+                <div class="contact-item">
+                    <span class="emoji">🔗</span>
+                    <a href="#">linkedin.com/in/shahul-hameed</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ഷാഹുൽ ഹമീദ്. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.</p>
+            <p class="quote">"കോഡിംഗ് എന്നത് എന്റെ ഹോബിയും ജോലിയും സ്വപ്നവുമാണ്"</p>
+            <p>ക്ലാസ് 9 | ഭാവിയിലെ സോഫ്റ്റ്വെയർ എഞ്ചിനീയർ</p>
+        </div>
+    </footer>
+</body>
+</html>
